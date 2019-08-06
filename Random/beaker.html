@@ -1,0 +1,36 @@
+<title> Englisht-to-Beaker Translator </title>
+
+<table><td valign=top>
+
+<img src=http://ranqit.com/u/f4e50f38-4987-4ff6-8505-3451be4b9ae6.gif height=200>
+
+<td width=15><td valign=top>
+
+<h1> One Way Translator </h1>
+
+<div id=thebox></div>
+
+</table>
+
+<script language=javascript>
+
+str1="Enter something in English to translate to Beaker's language: ";
+str1+="<BR><BR> <textarea></textarea> <BR><BR>";
+str1+="<input type=button value='Translate' onClick=d(1)>";
+
+str2="Translation: <BR><BR><table>";
+str2+="<td><img height=20 src=http://i734.photobucket.com/albums/ww346/coyotebyte/th_Quotation_Maks-start.gif>";
+str2+="<td width=250 bgcolor=#ddd height=50><table><td width=10><td> Mee-mee-mee-mee-mee</table>";
+str2+="<td><img height=20 src=http://i734.photobucket.com/albums/ww346/coyotebyte/th_Quotation_Maks-end.gif>";
+str2+="</table><BR><input type=button value='Translate Another Phrase' onClick=d(0)>";
+
+str=[str1,str2];
+
+function d(num)
+{
+	document.getElementById("thebox").innerHTML=str[num];
+}
+
+d(0);
+
+</script>
