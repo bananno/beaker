@@ -1,36 +1,77 @@
-<title> Englisht-to-Beaker Translator </title>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
 
-<table><td valign=top>
+  <title>English-to-Beaker Translator</title>
 
-<img src=http://ranqit.com/u/f4e50f38-4987-4ff6-8505-3451be4b9ae6.gif height=200>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-<td width=15><td valign=top>
+  <script>
+  	function hideElement(id) {
+  		document.getElementById(id).style.display = 'none';
+  	}
 
-<h1> One Way Translator </h1>
+    function showElement(id) {
+  		document.getElementById(id).style.display = 'block';
+  	}
 
-<div id=thebox></div>
+    function waitText(text) {
+  		document.getElementById('waiting').innerHTML = text;
+  	}
 
-</table>
+    function go() {
+      hideElement('part1');
+      showElement('waiting');
+      waitText('translating');
 
-<script language=javascript>
+      setTimeout(() => waitText('translating.'), 500);
+      setTimeout(() => waitText('translating..'), 1000);
+      setTimeout(() => waitText('translating...'), 1500);
 
-str1="Enter something in English to translate to Beaker's language: ";
-str1+="<BR><BR> <textarea></textarea> <BR><BR>";
-str1+="<input type=button value='Translate' onClick=d(1)>";
+      setTimeout(() => {
+	      hideElement('waiting');
+	      showElement('part2');
+      }, 2000);
+    }
 
-str2="Translation: <BR><BR><table>";
-str2+="<td><img height=20 src=http://i734.photobucket.com/albums/ww346/coyotebyte/th_Quotation_Maks-start.gif>";
-str2+="<td width=250 bgcolor=#ddd height=50><table><td width=10><td> Mee-mee-mee-mee-mee</table>";
-str2+="<td><img height=20 src=http://i734.photobucket.com/albums/ww346/coyotebyte/th_Quotation_Maks-end.gif>";
-str2+="</table><BR><input type=button value='Translate Another Phrase' onClick=d(0)>";
+    function startOver() {
+      document.getElementById('part2').style.display = 'none';
+      document.getElementById('part1').style.display = 'block';
+      waitText('');
+      originaltext.value = '';
+    }
+  </script>
+</head>
+<body>
+  <div id="logo" class="column"></div>
 
-str=[str1,str2];
+  <div class="column">
+    <h1>One Way Translator</h1>
 
-function d(num)
-{
-	document.getElementById("thebox").innerHTML=str[num];
-}
+    <div id="part1">
+      <p>
+        Enter something in English to translate to Beaker's language:
+      </p>
+      <textarea id="originaltext"></textarea>
+      <button onClick="go()">Translate</button>
+    </div>
 
-d(0);
+    <div id="part2">
+      <p>
+        Translation:
+      </p>
+      <div>
+        <div id="quote-open"></div>
+        <div id="quote-content">
+          Mee-mee-mee-mee-mee
+        </div>
+        <div id="quote-close"></div>
+      </div>
+      <button onClick="startOver()">Translate Another Phrase</button>
+    </div>
 
-</script>
+    <div id="waiting"></div>
+  </div>
+</body>
+</html>

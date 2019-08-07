@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 30px;
+}
+
+button {
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
+  border: 0;
+  background-color: #e65c00;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+
+#logo {
+  background-image: url("beaker.png");
+  height: 250px;
+  width: 300px;
+  background-size: 400px;
+  background-repeat: no-repeat;
+  margin: 0 30px 30px 0;
+  border: 3px solid #e65c00;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+#part2 {
+  display: none;
+}
+
+#waiting {
+  margin: 20px;
+}
+
+#part1 p, #part2 p {
+  margin: 10px 0;
+}
+
+#quote-open, #quote-close, #quote-content {
+  display: inline-block;
+  vertical-align: text-top;
+  height: 50px;
+}
+
+#quote-open, #quote-close {
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#quote-open {
+  background-image: url("quote1.gif");
+}
+
+#quote-close {
+  background-image: url("quote2.gif");
+}
+
+#quote-content {
+  background-color: #ddd;
+  vertical-align: center;
+  line-height: 50px;
+  padding: 0 20px;
+}
