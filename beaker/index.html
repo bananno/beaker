@@ -8,17 +8,17 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <script>
-  	function hideElement(id) {
-  		document.getElementById(id).style.display = 'none';
-  	}
+    function hideElement(id) {
+      document.getElementById(id).style.display = 'none';
+    }
 
     function showElement(id) {
-  		document.getElementById(id).style.display = 'block';
-  	}
+      document.getElementById(id).style.display = 'block';
+    }
 
     function waitText(text) {
-  		document.getElementById('waiting').innerHTML = text;
-  	}
+      document.getElementById('waiting').innerHTML = text;
+    }
 
     function go() {
       hideElement('part1');
@@ -30,8 +30,8 @@
       setTimeout(() => waitText('translating...'), 1500);
 
       setTimeout(() => {
-	      hideElement('waiting');
-	      showElement('part2');
+        hideElement('waiting');
+        showElement('part2');
       }, 2000);
     }
 
